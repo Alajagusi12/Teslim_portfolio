@@ -1,0 +1,122 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowUpRight, Download, Mail } from "lucide-react";
+import { site, stats } from "@/data/site";
+
+export default function Hero() {
+  return (
+    <>
+      <section
+        id="top"
+        className="mx-auto flex max-w-6xl flex-wrap items-center gap-14 px-6 pb-16 pt-20 md:pt-24"
+      >
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="flex min-w-[280px] flex-1 basis-[480px] flex-col gap-5"
+        >
+          <p className="text-xs font-bold uppercase tracking-[0.1em] text-accent">
+            AI Evaluation · Software QA · Frontend
+          </p>
+          <h1 className="font-serif text-5xl font-bold leading-[1.05] tracking-tight text-ink md:text-7xl">
+            ABDULWAHAB TESLIM
+          </h1>
+          <p className="text-lg font-medium text-ink/80">
+            AI Evaluation Specialist | Software QA | Test Automation | Frontend
+            Development
+          </p>
+          <p className="max-w-xl text-lg leading-relaxed text-muted">
+            I evaluate AI-generated responses, test software for reliability,
+            and build modern web applications with a focus on accuracy,
+            usability, and quality.
+          </p>
+          <p className="max-w-xl text-base text-muted">
+            Explore my projects, technical skills, evaluation approach, and
+            software quality work.
+          </p>
+
+          <div className="mt-2 flex flex-wrap gap-3">
+            <a
+              href="#projects"
+              className="inline-flex min-h-[46px] items-center rounded-lg bg-accent px-5 text-[15px] font-semibold text-white transition-colors hover:bg-accent-dark"
+            >
+              Explore My Work
+            </a>
+            <a
+              href={site.resume}
+              download
+              className="inline-flex min-h-[46px] items-center gap-2 rounded-lg border border-line bg-surface px-5 text-[15px] font-semibold text-ink transition-colors hover:border-accent"
+            >
+              <Download size={16} aria-hidden="true" />
+              Download Resume
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex min-h-[46px] items-center rounded-lg border border-line bg-surface px-5 text-[15px] font-semibold text-ink transition-colors hover:border-accent"
+            >
+              Contact Me
+            </a>
+          </div>
+
+          <div className="flex flex-wrap gap-5 text-sm font-medium text-muted">
+            <a
+              href={site.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-accent"
+            >
+              GitHub <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+            <a
+              href={site.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1 hover:text-accent"
+            >
+              LinkedIn <ArrowUpRight size={14} aria-hidden="true" />
+            </a>
+            <a
+              href={`mailto:${site.email}`}
+              className="inline-flex items-center gap-1 hover:text-accent"
+            >
+              <Mail size={14} aria-hidden="true" />
+              {site.email}
+            </a>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.97 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="flex flex-1 basis-[260px] justify-center"
+        >
+          <div
+            className="flex h-80 w-[270px] flex-col items-center justify-center gap-3 rounded-[20px] bg-forest text-[#ecfdf5]"
+            aria-hidden="true"
+          >
+            <span className="font-serif text-8xl font-bold leading-none">AT</span>
+            <span className="text-xs font-semibold tracking-[0.18em] text-mint">
+              NIGERIA · REMOTE
+            </span>
+          </div>
+        </motion.div>
+      </section>
+
+      <section aria-label="Highlights" className="border-y border-line bg-surface">
+        <dl className="mx-auto grid max-w-6xl grid-cols-2 gap-6 px-6 py-9 md:grid-cols-4">
+          {stats.map((s) => (
+            <div key={s.label}>
+              <dt className="font-serif text-3xl font-bold text-accent md:text-4xl">
+                {s.value}
+              </dt>
+              <dd className="mt-1 text-sm text-muted">{s.label}</dd>
+            </div>
+          ))}
+        </dl>
+      </section>
+    </>
+  );
+}
