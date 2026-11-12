@@ -1,6 +1,7 @@
 import FadeIn from "./FadeIn";
 import SectionHeading from "./SectionHeading";
-import { testCases } from "@/data/site";
+import TestTable from "./TestTable";
+import { playwrightSample, testCases } from "@/data/site";
 
 const bug = [
   ["Title", "Login button unresponsive on basic login page"],
@@ -30,43 +31,7 @@ export default function QAShowcase() {
 
         <div>
           <h3 className="mb-3 font-serif text-xl font-bold">Sample test cases</h3>
-          <div className="overflow-x-auto rounded-2xl border border-line">
-            <table className="w-full min-w-[820px] border-collapse text-left text-sm">
-              <thead className="bg-paper text-xs uppercase tracking-[0.08em] text-muted">
-                <tr>
-                  {["ID", "Feature", "Steps", "Expected result", "Actual result", "Status"].map(
-                    (h) => (
-                      <th key={h} scope="col" className="px-4 py-3 font-semibold">
-                        {h}
-                      </th>
-                    )
-                  )}
-                </tr>
-              </thead>
-              <tbody>
-                {testCases.map((t) => (
-                  <tr key={t.id} className="border-t border-line align-top">
-                    <td className="px-4 py-3 font-semibold">{t.id}</td>
-                    <td className="px-4 py-3">{t.feature}</td>
-                    <td className="px-4 py-3 text-muted">{t.steps}</td>
-                    <td className="px-4 py-3 text-muted">{t.expected}</td>
-                    <td className="px-4 py-3 text-muted">{t.actual}</td>
-                    <td className="px-4 py-3">
-                      <span
-                        className={`rounded-full px-2.5 py-1 text-xs font-bold ${
-                          t.status === "Pass"
-                            ? "bg-emerald-100 text-emerald-800"
-                            : "bg-red-100 text-red-800"
-                        }`}
-                      >
-                        {t.status}
-                      </span>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <TestTable testCases={testCases} />
         </div>
 
         <div>
@@ -79,6 +44,16 @@ export default function QAShowcase() {
               </div>
             ))}
           </dl>
+        </div>
+
+        <div>
+          <h3 className="mb-1 font-serif text-xl font-bold">Automation sample</h3>
+          <p className="mb-3 text-sm text-muted">
+            An illustrative Playwright test using the Page Object Model.
+          </p>
+          <pre className="overflow-x-auto rounded-2xl bg-forest p-5 text-[13px] leading-relaxed text-[#ecfdf5]">
+            <code>{playwrightSample}</code>
+          </pre>
         </div>
       </FadeIn>
     </section>

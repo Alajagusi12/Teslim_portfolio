@@ -1,5 +1,6 @@
 import { Download, Mail } from "lucide-react";
 import { site } from "@/data/site";
+import CopyEmail from "./CopyEmail";
 
 export default function Contact() {
   return (
@@ -15,11 +16,12 @@ export default function Contact() {
         <div className="flex flex-wrap gap-3">
           <a
             href={`mailto:${site.email}`}
-            className="inline-flex min-h-[46px] items-center gap-2 rounded-lg bg-[#ecfdf5] px-5 text-[15px] font-semibold text-forest"
+            className="inline-flex min-h-[46px] items-center gap-2 rounded-lg bg-[#ecfdf5] px-5 text-[15px] font-semibold text-[#0f1f1a]"
           >
             <Mail size={16} aria-hidden="true" />
             Email me
           </a>
+          <CopyEmail email={site.email} />
           <a
             href={site.resume}
             download

@@ -1,20 +1,53 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --paper: #faf9f6;
+  --surface: #ffffff;
+  --ink: #111827;
+  --muted: #4b5563;
+  --line: #e2e0d9;
+  --accent: #047857;
+  --accent-dark: #065f46;
+  --on-accent: #ffffff;
+  --forest: #0f1f1a;
+  --mint: #a7f3d0;
+}
+
+.dark {
+  --paper: #0b1210;
+  --surface: #111c18;
+  --ink: #eef4f2;
+  --muted: #9fb3ac;
+  --line: #22332d;
+  --accent: #34d399;
+  --accent-dark: #6ee7b7;
+  --on-accent: #052e22;
+  --forest: #0d2a21;
+  --mint: #a7f3d0;
+}
+
 @theme inline {
-  --color-paper: #faf9f6;
-  --color-surface: #ffffff;
-  --color-ink: #111827;
-  --color-muted: #4b5563;
-  --color-line: #e2e0d9;
-  --color-accent: #047857;
-  --color-accent-dark: #065f46;
-  --color-forest: #0f1f1a;
-  --color-mint: #a7f3d0;
+  --color-paper: var(--paper);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-on-accent: var(--on-accent);
+  --color-forest: var(--forest);
+  --color-mint: var(--mint);
   --font-sans: var(--font-inter);
   --font-serif: var(--font-source-serif);
 }
 
 html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
 
 body {
   background: var(--color-paper);

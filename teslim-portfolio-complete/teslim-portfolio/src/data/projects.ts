@@ -1,3 +1,6 @@
+// Draft case study copy. Review each section against your real code and edit
+// anything that does not match what you built.
+
 export type Section = { title: string; body: string; points?: string[] };
 
 export type Project = {
@@ -9,6 +12,9 @@ export type Project = {
   source: string;
   overview: string;
   sections: Section[];
+  // Optional real screen recording. Put the file in public/projects/ and set, for example:
+  // media: { type: "image", src: "/projects/nexus.gif", alt: "Nexus demo" }
+  media?: { type: "image" | "video"; src: string; alt?: string };
 };
 
 export const projects: Project[] = [
@@ -16,38 +22,29 @@ export const projects: Project[] = [
     slug: "evalops",
     name: "EvalOps",
     summary:
-      "Production-grade AI quality engineering platform. Uses an AI Judge to automatically grade LLM outputs on Factuality, Reasoning, and Safety.",
-    stack: ["Next.js", "TypeScript", "PostgreSQL", "Playwright", "Tailwind CSS", "Gemini API"],
+      "Live AI quality engineering and benchmarking platform that uses the Gemini API to evaluate responses.",
+    stack: ["Next.js", "TypeScript", "PostgreSQL", "Gemini API", "Playwright"],
     live: "https://evalops-eight.vercel.app",
-    source: "https://github.com/Alajagusi12/evalops",
+    // TODO: replace with the exact EvalOps repository URL
+    source: "https://github.com/Alajagusi12",
     overview:
-      "EvalOps is an autonomous AI evaluation platform. It provides a centralized dashboard where QA engineers and AI researchers can benchmark models side-by-side, detect hallucinations, and maintain a historical record of evaluation rationales.",
+      "EvalOps is a full-stack AI evaluation and benchmarking platform that I designed, developed, and deployed.",
     sections: [
       {
-        title: "The problem it solves",
-        body: "As AI models become more complex, ensuring their factual accuracy, reasoning, and safety is critical. Manual evaluation is slow and inconsistent. EvalOps solves this by automating the scoring process using a secondary AI agent (the AI Judge) and logging the results in a PostgreSQL database.",
+        title: "Why I built it",
+        body: "I built EvalOps to combine my AI evaluation and QA engineering work in one live project that demonstrates modern engineering and testing skills.",
       },
       {
-        title: "Design decisions",
-        body: "The UI was built to feel like a serious enterprise SaaS tool (inspired by Datadog and Linear), prioritizing data density over friendly chat bubbles.",
-        points: [
-          "A strict dark-mode design system using Tailwind CSS with sharp corners and monospace fonts for metrics.",
-          "Replaced Prisma ORM with raw SQL via node-postgres (pg) to ensure zero build-time deployment failures on Vercel.",
-          "Integrated Recharts for real-time data visualization of hallucination rates and agent activity.",
-        ],
+        title: "What it does",
+        body: "It integrates the Google Gemini API to evaluate responses for factuality and reasoning quality, and it includes evaluation workflows for analyzing model performance.",
       },
       {
         title: "Tech used",
-        body: "Next.js 14 (App Router) and TypeScript for the application, Tailwind CSS for the custom design system, PostgreSQL (Neon.tech) for the database, and the Google Gemini API for the AI evaluation engine.",
+        body: "Next.js and TypeScript for the application, PostgreSQL for data, the Google Gemini API for response evaluation, and Playwright for end-to-end testing. Deployed on Vercel.",
       },
       {
         title: "Testing and Quality Assurance",
-        body: "Because this platform was built by a QA Engineer, it was developed with a 'test-first' mindset. The repository includes a robust automated testing suite.",
-        points: [
-          "Playwright End-to-End tests validating the core evaluation workflow.",
-          "Network mocking to simulate API latency and ensure the UI remains stable under load.",
-          "Raw SQL queries tested to ensure data is inserted and retrieved without vulnerabilities.",
-        ],
+        body: "Playwright end-to-end tests with network mocking validate the evaluation workflows and error handling.",
       },
     ],
   },
@@ -58,6 +55,7 @@ export const projects: Project[] = [
       "Full-stack collaboration app with messaging, video, Kanban boards, and documents in one workspace.",
     stack: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Supabase", "Tailwind CSS"],
     live: "https://nexus-iota-two-17.vercel.app/",
+    // TODO: replace with the exact Nexus repository URL
     source: "https://github.com/Alajagusi12",
     overview:
       "Nexus is a full-stack collaboration app that brings messaging, video, Kanban task boards, and documents into a single workspace.",
@@ -81,7 +79,7 @@ export const projects: Project[] = [
       },
       {
         title: "Challenges",
-        body: "Combining several feature areas in one app meant keeping data models consistent across messaging, tasks, and documents, and managing the connection between the app and the hosted database.",
+        body: "Combining several feature areas in one app meant keeping data models consistent across messaging, tasks, and documents, and managing the connection between the app and the hosted database. I also diagnosed and resolved responsive layout issues around the 768px breakpoint.",
       },
       {
         title: "Testing and Quality Assurance",
@@ -99,17 +97,18 @@ export const projects: Project[] = [
     slug: "task-manager",
     name: "Task Manager",
     summary:
-      "A task manager that covers task creation, UI interactions, state management, and input validation.",
-    stack: ["JavaScript", "HTML", "CSS"],
+      "A task manager with interactive UI workflows, input validation, and a Python script that generates completion reports.",
+    stack: ["Python", "HTML", "CSS", "JavaScript"],
     live: "https://alajagusi12.github.io/Task-Manager/",
     source: "https://github.com/Alajagusi12/Task-Manager",
     overview:
-      "A focused task manager built to practice clean UI interactions, predictable state, and careful input handling.",
+      "A task management web application with interactive UI workflows, task status updates, input validation, and a Python backend script that analyzes task data and generates completion reports.",
     sections: [
       { title: "Task creation", body: "Users add a task through a simple form. New tasks appear in the list immediately so the result of each action is clear." },
       { title: "UI interactions", body: "Tasks can be updated and managed directly from the list, with clear visual feedback for each state." },
       { title: "State management", body: "The task list is the single source of truth, and the interface re-renders from that data so what the user sees always matches the underlying state." },
       { title: "Input validation", body: "Empty or invalid input is rejected before a task is created, and the user sees a clear message explaining what to fix." },
+      { title: "Data reporting with Python", body: "A Python script (report.py) analyzes the task data and generates completion reports, which adds a data-analysis side to the project." },
     ],
   },
   {
