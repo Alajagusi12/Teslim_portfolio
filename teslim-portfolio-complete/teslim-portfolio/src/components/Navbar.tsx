@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import Link from "next/link";
 import { navLinks } from "@/data/site";
 import ThemeToggle from "./ThemeToggle";
 
@@ -11,19 +12,19 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-        <a href="/#top" className="font-serif text-2xl font-bold text-ink">
+        <Link href="/#top" className="font-serif text-2xl font-bold text-ink">
           AT
-        </a>
+        </Link>
 
         <nav aria-label="Main" className="hidden gap-6 lg:flex">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -47,14 +48,14 @@ export default function Navbar() {
           className="border-t border-line bg-paper px-6 py-3 lg:hidden"
         >
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="block py-3 text-base font-medium text-ink"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
       )}
