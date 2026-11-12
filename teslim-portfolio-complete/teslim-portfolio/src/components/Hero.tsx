@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
+import Image from "next/image";
 import { site, stats } from "@/data/site";
 import CountUp from "./CountUp";
 
@@ -95,20 +96,21 @@ export default function Hero() {
           </div>
         </motion.div>
 
+        {/* --- THE IMAGE SECTION --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-1 basis-[260px] justify-center"
         >
-          <div
-            className="flex h-80 w-[270px] flex-col items-center justify-center gap-3 rounded-[20px] bg-forest text-[#ecfdf5] shadow-lg"
-            aria-hidden="true"
-          >
-            <span className="font-serif text-8xl font-bold leading-none">AT</span>
-            <span className="text-xs font-semibold tracking-[0.18em] text-mint">
-              NIGERIA · REMOTE
-            </span>
+          <div className="group relative h-80 w-[270px] overflow-hidden rounded-[20px] bg-forest shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
+            <Image
+              src="/profile.png"
+              alt="Abdulwahab Teslim"
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-110"
+              priority
+            />
           </div>
         </motion.div>
       </section>
