@@ -33,6 +33,12 @@ export default function Experience() {
                   </p>
                 </div>
                 <p className="mt-1 text-sm font-medium text-accent">{job.company}</p>
+                {job.plain && (
+                  <p className="mt-3 rounded-lg bg-paper px-4 py-3 text-sm leading-relaxed text-ink/90">
+                    <span className="font-semibold text-accent">In plain terms: </span>
+                    {job.plain}
+                  </p>
+                )}
                 <ul className="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted">
                   {job.bullets.map((b) => (
                     <li key={b}>{b}</li>

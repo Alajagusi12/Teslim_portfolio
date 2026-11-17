@@ -22,7 +22,7 @@ export default function Projects() {
                 media={p.media}
               />
               <h3 className="font-serif text-2xl font-bold">{p.name}</h3>
-              <p className="text-sm leading-relaxed text-muted">{p.summary}</p>
+              <p className="text-sm leading-relaxed text-muted">{p.explainer}</p>
               <ul className="flex flex-wrap gap-1.5">
                 {p.stack.map((s) => (
                   <li

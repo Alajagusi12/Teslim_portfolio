@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Check, X } from "lucide-react";
 import SectionHeading from "./SectionHeading";
+import EvaluationProcess from "./EvaluationProcess";
 
 type Segment = { text: string; flag?: boolean };
 type Criterion = {
@@ -172,6 +173,8 @@ export default function AIEvaluation() {
           title="AI evaluation showcase"
           intro="These are invented examples, created to show how I review a response. They are not real client data."
         />
+
+        <EvaluationProcess />
 
         <div className="flex flex-wrap gap-2" role="group" aria-label="Example responses">
           {scenarios.map((s) => (

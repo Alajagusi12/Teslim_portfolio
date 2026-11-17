@@ -1,6 +1,6 @@
 import FadeIn from "./FadeIn";
 import SectionHeading from "./SectionHeading";
-import { methodologies, skills } from "@/data/site";
+import { glossary, methodologies, skills } from "@/data/site";
 
 function Group({ title, items }: { title: string; items: string[] }) {
   return (
@@ -30,6 +30,21 @@ export default function Skills() {
             <Group key={group.title} title={group.title} items={group.items} />
           ))}
           <Group title="Methodologies and practices" items={methodologies} />
+        </div>
+
+        <div>
+          <h3 className="mb-1 font-serif text-xl font-bold">Key terms in plain English</h3>
+          <p className="mb-4 text-sm text-muted">
+            Some of these skills use specialist language, so here is what they mean.
+          </p>
+          <dl className="grid gap-4 md:grid-cols-2">
+            {glossary.map((g) => (
+              <div key={g.term} className="rounded-2xl border border-line bg-paper p-5">
+                <dt className="text-sm font-semibold">{g.term}</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-muted">{g.meaning}</dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </FadeIn>
     </section>

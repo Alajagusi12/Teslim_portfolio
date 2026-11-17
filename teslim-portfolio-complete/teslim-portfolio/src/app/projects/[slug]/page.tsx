@@ -51,6 +51,11 @@ export default async function ProjectPage({ params }: Props) {
         </h1>
         <p className="mt-4 text-lg leading-relaxed text-muted">{project.overview}</p>
 
+        <div className="mt-6 rounded-2xl border border-accent/30 bg-accent/10 p-5">
+          <p className="text-xs font-bold uppercase tracking-[0.1em] text-accent">In plain English</p>
+          <p className="mt-2 text-base leading-relaxed">{project.explainer}</p>
+        </div>
+
         <ul className="mt-5 flex flex-wrap gap-2">
           {project.stack.map((s) => (
             <li

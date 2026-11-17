@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import Link from "next/link";
+import { Menu, Search, X } from "lucide-react";
 import { navLinks } from "@/data/site";
 import ThemeToggle from "./ThemeToggle";
 
@@ -12,23 +11,33 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-6 py-3">
-        <Link href="/#top" className="font-serif text-2xl font-bold text-ink">
+        <a href="/#top" className="font-serif text-2xl font-bold text-ink">
           AT
-        </Link>
+        </a>
 
         <nav aria-label="Main" className="hidden gap-6 lg:flex">
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted transition-colors hover:text-accent"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event("open-palette"))}
+            aria-label="Open search"
+            className="hidden h-11 items-center gap-2 rounded-lg border border-line px-3 text-sm text-muted transition-colors hover:border-accent lg:inline-flex"
+          >
+            <Search size={14} aria-hidden="true" />
+            Search
+            <kbd className="rounded border border-line px-1.5 text-[11px]">Ctrl K</kbd>
+          </button>
           <ThemeToggle />
           <button
             type="button"
@@ -48,14 +57,14 @@ export default function Navbar() {
           className="border-t border-line bg-paper px-6 py-3 lg:hidden"
         >
           {navLinks.map((link) => (
-            <Link
+            <a
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="block py-3 text-base font-medium text-ink"
             >
               {link.label}
-            </Link>
+            </a>
           ))}
         </nav>
       )}

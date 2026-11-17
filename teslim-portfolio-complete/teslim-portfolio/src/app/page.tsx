@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import GitHubActivity from "@/components/GitHubActivity";
 import AIEvaluation from "@/components/AIEvaluation";
 import QAShowcase from "@/components/QAShowcase";
 import Experience from "@/components/Experience";
@@ -34,6 +35,7 @@ export default function Home() {
         <About />
         <Skills />
         <Projects />
+        <GitHubActivity />
         <AIEvaluation />
         <QAShowcase />
         <Experience />

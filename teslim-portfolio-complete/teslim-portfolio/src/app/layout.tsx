@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import Providers from "@/components/Providers";
 import ScrollProgress from "@/components/ScrollProgress";
+import CommandPalette from "@/components/CommandPalette";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -51,6 +52,7 @@ export default function RootLayout({
         </a>
         <Providers>
           <ScrollProgress />
+          <CommandPalette />
           {children}
         </Providers>
       </body>

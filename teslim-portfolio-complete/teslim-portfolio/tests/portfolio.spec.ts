@@ -44,6 +44,14 @@ test.describe("portfolio", () => {
     await expect(page.locator("html")).toHaveClass(/dark/);
   });
 
+  test("command palette opens with Ctrl+K", async ({ page }) => {
+    await page.goto("/");
+    await page.keyboard.press("Control+K");
+    await expect(page.getByRole("dialog", { name: "Command palette" })).toBeVisible();
+    await page.keyboard.press("Escape");
+    await expect(page.getByRole("dialog", { name: "Command palette" })).toHaveCount(0);
+  });
+
   test("mobile menu opens on a phone-sized screen", async ({ browser }) => {
     const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
     const page = await context.newPage();

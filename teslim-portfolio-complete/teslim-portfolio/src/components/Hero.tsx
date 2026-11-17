@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ArrowUpRight, Download, Mail } from "lucide-react";
-import Image from "next/image";
 import { site, stats } from "@/data/site";
 import CountUp from "./CountUp";
+import ProfilePhoto from "./ProfilePhoto";
 
 export default function Hero() {
   return (
@@ -27,14 +27,14 @@ export default function Hero() {
             Open to remote opportunities
           </p>
           <p className="text-xs font-bold uppercase tracking-[0.1em] text-accent">
-            AI Evaluation · Software QA · Frontend
+            Full-Stack · AI Evaluation · QA Automation
           </p>
           <h1 className="break-words font-serif text-4xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
             ABDULWAHAB TESLIM
           </h1>
           <p className="text-lg font-medium text-ink/80">
-            AI Evaluation Specialist | Software QA | Test Automation | Frontend
-            Development
+            Full-Stack Software Engineer | AI Evaluation & Alignment Specialist | QA
+            Automation Engineer
           </p>
           <p className="max-w-xl text-lg leading-relaxed text-muted">
             I evaluate AI-generated responses, test software for reliability,
@@ -96,22 +96,13 @@ export default function Hero() {
           </div>
         </motion.div>
 
-        {/* --- THE IMAGE SECTION --- */}
         <motion.div
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1 }}
           className="flex flex-1 basis-[260px] justify-center"
         >
-          <div className="group relative h-80 w-[270px] overflow-hidden rounded-[20px] bg-forest shadow-lg transition-all duration-300 hover:scale-105 hover:shadow-xl">
-            <Image
-              src="/profile.png"
-              alt="Abdulwahab Teslim"
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-110"
-              priority
-            />
-          </div>
+          <ProfilePhoto />
         </motion.div>
       </section>
 
