@@ -26,7 +26,7 @@ export const stats = [
 ];
 
 export const summary =
-  "Full-Stack Software Engineer and AI Evaluation Specialist pursuing an M.Sc. in Computer Science, with 5+ years of experience bridging production web engineering, QA test automation, and frontier LLM alignment. Proven expert in building scalable web systems (Next.js, TypeScript, PostgreSQL, Prisma), automated testing frameworks (Playwright E2E), and programmatic AI evaluation pipelines. Consistently rated in the top agreement band against reference solves across Turing, TELUS International, and Micro1, excelling in Golden Dataset curation, agentic tool-use auditing, RAG context grounding, rubric stress-testing, and defensible written rationales. Creator of EvalOps, a live full-stack AI benchmarking and regression detection platform. Bilingual in English and Yoruba.";
+  "Full-Stack Software Engineer and AI Evaluation Specialist pursuing an M.Sc. in Computer Science, with 5+ years of experience bridging production web engineering, QA test automation, and frontier LLM alignment. Proven expert in building scalable web systems (Next.js, TypeScript, PostgreSQL, Prisma), automated testing frameworks (Playwright E2E), and programmatic AI evaluation pipelines. Consistently rated in the top agreement band against reference solves across Turing, TELUS International, and Micro1—excelling in Golden Dataset curation, agentic tool-use auditing, RAG context grounding, rubric stress-testing, and defensible written rationales. Creator of EvalOps, a live full-stack AI benchmarking and regression detection platform. Bilingual in English and Yoruba.";
 
 export const skills = [
   {
@@ -86,22 +86,22 @@ export const experience: { group: string; jobs: Job[] }[] = [
       {
         role: "Full-Stack & AI Codebase Reviewer",
         company: "Micro1 (Freelance, Part-Time)",
-        plain: "I review the code behind web applications, and the step-by-step actions of AI coding agents, to confirm they are correct, safe, and well structured.",
+        plain: "I review the code behind production web applications, and the step-by-step actions of AI coding agents, to confirm they are correct, safe, and well structured.",
         period: "October 2026 - Present",
         bullets: [
-          "Full-Stack Codebase Auditing: Evaluated complex React, Next.js, and TypeScript codebases, identifying rendering regressions, reviewing component architectures, and validating state management logic.",
-          "Agentic Trajectory & Tool-Use Verification: Audited multi-step AI coding agents for function-calling accuracy, error recovery, architectural constraint adherence, and code safety, providing detailed technical justifications.",
+          "Production Codebase Auditing: Evaluated complex React, Next.js, and TypeScript repositories, isolating rendering regressions, auditing component architectures, and validating asynchronous state-management logic.",
+          "Agentic Trajectory & Tool-Use Verification: Audited multi-step AI coding agents across end-to-end execution workflows for function-calling accuracy, error recovery, architectural constraint adherence, and code safety, authoring defensible technical rationales.",
         ],
       },
       {
         role: "AI Response Reviewer & Quality Auditor",
         company: "RWS (Contract, Remote)",
-        plain: "I audited AI answers for accuracy, wording, and safety, flagged harmful or policy-breaking content, and checked that reviewers scored consistently.",
+        plain: "I audited AI answers claim by claim against sources, flagged harmful or policy-breaking content, and checked that reviewers scored consistently.",
         period: "September 2025 - October 2026",
         bullets: [
-          "High-Precision Factuality & Grounding Audits: Audited complex LLM outputs across high-volume evaluation queues, verifying factual grounding, linguistic precision, and strict instruction adherence against established evaluation rubrics.",
-          "Safety Guardrails & Harm Classification: Identified logic hallucinations, potential PII leakage, and policy violations across multi-turn prompts, applying established safety and harm-classification standards.",
-          "Calibration & Inter-Rater Reliability: Conducted multi-pass annotation quality audits and edge-case reviews to identify scoring inconsistencies and maintain high inter-annotator agreement across evaluation datasets.",
+          "Granular Factuality & Evidence Grounding: Audited complex LLM outputs across high-volume evaluation queues, verifying individual claims against primary sources, enforcing linguistic precision, and ensuring strict instruction adherence against multi-dimensional rubrics.",
+          "Multi-Tier Harm Classification & Guardrails: Isolated logic hallucinations, potential PII leakage, and policy violations across multi-turn prompts, systematically classifying user, group, and entity harm risks under strict safety standards.",
+          "Rubric Calibration & Inter-Rater Reliability (IRR): Executed multi-pass annotation quality audits and edge-case reviews, feeding back ambiguous scoring criteria to task designers to resolve inconsistencies and sustain top-band inter-annotator agreement.",
         ],
       },
       {
